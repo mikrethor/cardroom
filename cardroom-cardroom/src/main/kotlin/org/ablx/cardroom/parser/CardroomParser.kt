@@ -21,4 +21,8 @@ abstract class CardroomParser : Parser {
     val PIPE = "|"
     val APOSTROPHE = "'"
     val VIDE = ""
+
+    override fun setCurrency(currency: Currency) {
+        money=currency
+    }
 }

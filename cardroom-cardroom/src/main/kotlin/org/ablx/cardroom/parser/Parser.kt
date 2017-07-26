@@ -4,8 +4,10 @@ import org.ablx.cardroom.commons.data.Hand
 import org.ablx.cardroom.commons.data.Player
 import org.ablx.cardroom.commons.enumeration.Action
 import org.ablx.cardroom.commons.enumeration.Card
+import org.ablx.cardroom.commons.enumeration.Currency
 import org.ablx.cardroom.commons.enumeration.GameType
 import java.util.*
+
 
 interface Parser {
     fun readHandFile(filePath: String): String
@@ -52,13 +54,13 @@ interface Parser {
 
     fun getTournamentId(): String
 
-    fun setDevise(devise: Currency)
+    fun setCurrency(currency: Currency)
 
     fun parsing(): Map<String, Hand>
 
-    fun parseBuyIn(chaine: String): Double?
+    fun parseBuyIn(chaine: String): Double
 
-    fun parseFee(chaine: String): Double?
+    fun parseFee(chaine: String): Double
 
     fun parseLevel(chaine: String): Int
 
