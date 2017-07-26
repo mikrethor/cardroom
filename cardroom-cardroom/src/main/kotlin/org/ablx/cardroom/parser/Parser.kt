@@ -72,10 +72,9 @@ interface Parser {
 
     fun parseTableId(chaine: String): String
 
-    fun parseNumberOfPlayerByTable(chaine: String): String
+    fun parseNumberOfPlayerByTable(chaine: String): Int
 
-
-    fun parseGameIdSite(chaine: String): String
+    fun parseGameIdCardroom(chaine: String): String
 
     fun parseButtonSeat(chaine: String): Int?
 
@@ -86,7 +85,6 @@ interface Parser {
     fun parseRake(chaine: String): Double?
 
     fun parsePlayerAccount(chaine: String): String
-
 
     fun getGameTypeFromFilename(fileName: String): GameType
 
