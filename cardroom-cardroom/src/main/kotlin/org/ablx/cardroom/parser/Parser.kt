@@ -44,9 +44,9 @@ interface Parser {
 
     fun getPlayerBlind(blindDealt: Array<String>): String
 
-    fun readCards(chaine: String): Array<Card>
+    fun readCards(line: String): Array<Card>
 
-    fun readPlayer(chaine: String, players: Map<String, Player>): Action
+    fun readPlayer(line: String, players: Map<String, Player>): Action
 
     fun stringToECards(card: String): Card
 
@@ -58,39 +58,39 @@ interface Parser {
 
     fun parsing(): Map<String, Hand>
 
-    fun parseBuyIn(chaine: String): Double
+    fun parseBuyIn(line: String): Double
 
-    fun parseFee(chaine: String): Double
+    fun parseFee(line: String): Double
 
-    fun parseLevel(chaine: String): Int
+    fun parseLevel(line: String): Int
 
-    fun parseHandId(chaine: String): String
+    fun parseHandId(line: String): String
 
-    fun parseSmallBlind(chaine: String): Double?
+    fun parseSmallBlind(line: String): Double?
 
-    fun parseBigBlind(chaine: String): Double?
+    fun parseBigBlind(line: String): Double?
 
-    fun parseTableId(chaine: String): String
+    fun parseTableId(line: String): String
 
-    fun parseNumberOfPlayerByTable(chaine: String): Int
+    fun parseNumberOfPlayerByTable(line: String): Int
 
-    fun parseGameIdCardroom(chaine: String): String
+    fun parseGameIdCardroom(line: String): String
 
-    fun parseButtonSeat(chaine: String): Int?
+    fun parseButtonSeat(line: String): Int?
 
-    fun parsePlayerSeat(chaine: String): Player
+    fun parsePlayerSeat(line: String): Player
 
-    fun parseTotalPot(chaine: String): Double?
+    fun parseTotalPot(line: String): Double?
 
-    fun parseRake(chaine: String): Double?
+    fun parseRake(line: String): Double?
 
-    fun parsePlayerAccount(chaine: String): String
+    fun parsePlayerAccount(line: String): String
 
     fun getGameTypeFromFilename(fileName: String): GameType
 
-    fun parseHandDate(chaine: String): Date
+    fun parseHandDate(line: String): Date
 
-    fun parseCurrency(chaine: String): Currency
+    fun parseCurrency(line: String): Currency
 
     fun isUselesLine(line: String): Boolean?
 
