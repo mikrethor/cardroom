@@ -4,9 +4,10 @@ import org.ablx.cardroom.commons.data.Cardroom
 import org.ablx.cardroom.commons.enumeration.Currency
 import org.ablx.cardroom.commons.enumeration.Operator
 
-abstract class CardroomParser(val cardroom:Cardroom) : Parser {
+abstract class CardroomParser() : Parser {
 
-    protected abstract var operator : Operator?
+    protected abstract val operator : Operator
+    protected abstract val cardroom:Cardroom
     protected var money = Currency.USD
     val ESPACE = " "
     val DEUXPOINTS = ":"
