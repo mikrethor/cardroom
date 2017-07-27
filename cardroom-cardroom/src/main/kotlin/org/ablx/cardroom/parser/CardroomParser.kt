@@ -8,8 +8,9 @@ abstract class CardroomParser() : Parser {
 
     protected abstract val operator : Operator
     protected abstract val cardroom:Cardroom
+    protected abstract val filePath: String
     protected var money = Currency.USD
-    val ESPACE = " "
+    val SPACE = " "
     val DEUXPOINTS = ":"
     val PARENTHESEGAUCHE = "("
     val PARENTHESEDROITE = ")"

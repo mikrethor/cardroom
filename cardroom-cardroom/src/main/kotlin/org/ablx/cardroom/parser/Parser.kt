@@ -10,9 +10,9 @@ import java.util.*
 
 
 interface Parser {
-    fun readHandFile(filePath: String): String
+    fun readHandFile(): String
     fun isHandFile(filePath: String): Boolean
-    fun parseNewHandLine(nextLine: String, input: Scanner, phase: String, nextPhases: Array<String>, hand: Hand): String
+    fun parseNewHandLine(line: String, phase: String, nextPhases: Array<String>, hand: Hand): String
     fun parse(): Map<String, Hand>
 
     fun parseTableLine(nextLine: String, input: Scanner, phase: String, nextPhases: Array<String>, hand: Hand): String
