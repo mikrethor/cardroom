@@ -1,9 +1,12 @@
 package org.ablx.cardroom.parser
 
+import org.ablx.cardroom.commons.data.Cardroom
 import org.ablx.cardroom.commons.enumeration.Currency
+import org.ablx.cardroom.commons.enumeration.Operator
 
-abstract class CardroomParser : Parser {
+abstract class CardroomParser(val cardroom:Cardroom) : Parser {
 
+    protected abstract var operator : Operator?
     protected var money = Currency.USD
     val ESPACE = " "
     val DEUXPOINTS = ":"
