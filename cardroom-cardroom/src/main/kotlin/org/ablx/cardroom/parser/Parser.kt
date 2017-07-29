@@ -13,7 +13,7 @@ interface Parser {
     fun readHandFile(): String
     fun isHandFile(filePath: String): Boolean
     fun parseNewHandLine(line: String, phase: String, nextPhases: Array<String>, hand: Hand): String
-    fun parse(): Map<String, Hand>
+    fun parse(): MutableMap<String, Hand>?
 
     fun parseTableLine(nextLine: String, input: Scanner, phase: String, nextPhases: Array<String>, hand: Hand): String
 
@@ -66,9 +66,9 @@ interface Parser {
 
     fun parseHandId(line: String): String
 
-    fun parseSmallBlind(line: String): Double?
+    fun parseSmallBlind(line: String): Double
 
-    fun parseBigBlind(line: String): Double?
+    fun parseBigBlind(line: String): Double
 
     fun parseTableId(line: String): String
 
