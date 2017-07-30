@@ -14,6 +14,7 @@ data class Hand(val cardroomHandId: String) {
     var level: Int = 0
     var fee: Double = 0.0
     var buyIn: Double = 0.0
+    var numberOfPlayerByTable = 0
     var handActions: List<HandAction>? = null
 
 

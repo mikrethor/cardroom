@@ -1,6 +1,7 @@
 package org.ablx.cardroom.parser
 
 import org.ablx.cardroom.commons.data.Hand
+import org.ablx.cardroom.commons.data.HandAction
 import org.ablx.cardroom.commons.data.Player
 import org.ablx.cardroom.commons.enumeration.Action
 import org.ablx.cardroom.commons.enumeration.Card
@@ -15,28 +16,28 @@ interface Parser {
     fun parseNewHandLine(line: String, phase: String, nextPhases: Array<String>, hand: Hand): String
     fun parse(): MutableMap<String, Hand>?
 
-    fun parseTableLine(nextLine: String, input: Scanner, phase: String, nextPhases: Array<String>, hand: Hand): String
+    fun parseTableLine(currentLine: String, iterator: Iterator<String>, phase: String, nextPhases: Array<String>, hand: Hand): String
 
-    fun parseSeatLine(nextLine: String, input: Scanner, phase: String, nextPhases: Array<String>, hand: Hand): String
+    fun parseSeatLine(currentLine: String, iterator: Iterator<String>, phase: String, nextPhases: Array<String>, hand: Hand): String
 
-    fun parseAntesAndBlinds(nextLine: String, input: Scanner, phase: String, nextPhases: Array<String>, hand: Hand): String
+    fun parseAntesAndBlinds(currentLine: String, iterator: Iterator<String>, phase: String, nextPhases: Array<String>, hand: Hand): String
 
-    fun parseDealer(nextLine: String, input: Scanner, phase: String, nextPhases: Array<String>, hand: Hand): String
+    fun parseDealer(currentLine: String, iterator: Iterator<String>, phase: String, nextPhases: Array<String>, hand: Hand): String
 
-    fun readActionsByPhase(nextLine: String, input: Scanner, hand: Hand, phase: String, nextPhases: Array<String>,
-                           actions: List<Action>): String
+    fun readActionsByPhase(currentLine: String, iterator: Iterator<String>, hand: Hand, phase: String, nextPhases: Array<String>,
+                           actions: MutableList<HandAction>): String
 
-    fun readPreflop(nextLine: String, input: Scanner, hand: Hand): String
+    fun readPreflop(currentLine: String, iterator: Iterator<String>, hand: Hand): String
 
-    fun readFlop(nextLine: String, input: Scanner, hand: Hand): String
+    fun readFlop(currentLine: String, iterator: Iterator<String>, hand: Hand): String
 
-    fun readTurn(nextLine: String, input: Scanner, hand: Hand): String
+    fun readTurn(currentLine: String, iterator: Iterator<String>, hand: Hand): String
 
-    fun readRiver(nextLine: String, input: Scanner, hand: Hand): String
+    fun readRiver(currentLine: String, iterator: Iterator<String>, hand: Hand): String
 
-    fun readShowdown(nextLine: String, input: Scanner, hand: Hand): String
+    fun readShowdown(currentLine: String, iterator: Iterator<String>, hand: Hand): String
 
-    fun readSummary(nextLine: String, input: Scanner, phase: String, nextPhases: Array<String>, hand: Hand): String
+    fun readSummary(currentLine: String, iterator: Iterator<String>, phase: String, nextPhases: Array<String>, hand: Hand): String
 
     fun getCards(cards: String): Array<String>
 
@@ -46,7 +47,7 @@ interface Parser {
 
     fun readCards(line: String): Array<Card>
 
-    fun readPlayer(line: String, players: Map<String, Player>): Action
+    fun readAction(line: String, players: Map<String, Player>): HandAction
 
     fun stringToECards(card: String): Card
 

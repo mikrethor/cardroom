@@ -3,6 +3,9 @@ package org.ablx.cardroom.parser
 import org.ablx.cardroom.commons.data.Cardroom
 import org.ablx.cardroom.commons.enumeration.Currency
 import org.ablx.cardroom.commons.enumeration.Operator
+import com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER
+
+
 
 abstract class CardroomParser() : Parser {
 
@@ -29,5 +32,15 @@ abstract class CardroomParser() : Parser {
 
     override fun setCurrency(currency: Currency) {
         money=currency
+    }
+
+    protected fun startsWith(chaine: String, nextPhases: Array<String>): Boolean {
+        for (phase in nextPhases) {
+
+            if (chaine.startsWith(phase)) {
+                return true
+            }
+        }
+        return false
     }
 }

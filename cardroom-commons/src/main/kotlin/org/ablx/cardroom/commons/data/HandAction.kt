@@ -1,5 +1,7 @@
 package org.ablx.cardroom.commons.data
 
-data class HandAction(val id:Long){
+import org.ablx.cardroom.commons.enumeration.Round
 
+data class HandAction(val id:Long){
+    var phase: Round? = null
 }
