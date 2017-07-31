@@ -5,7 +5,7 @@ enum class Card(val value: Int) {
     /**
      * As of Spades.
      */
-    AS(14),
+    C_AS(14),
     /**
      * King of Spades.
      */

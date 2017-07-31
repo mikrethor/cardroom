@@ -1,6 +1,6 @@
 package org.ablx.cardroom.commons.enumeration
 
-enum class Action(val action: String,val value:Int) {
+enum class Action(val action: String, val value: Int) {
 
     FOLDS("folds", 1),
     CALLS("calls", 2),
@@ -9,4 +9,25 @@ enum class Action(val action: String,val value:Int) {
     BETS("bets", 5),
     COLLECTED("collected", 6),
     SHOWS("shows", 7);
+
+
+    companion object {
+        /**
+         * Convertie une chaine de caractere en EAction.
+
+         * @param action
+         * *            chaine de caractere.
+         * *
+         * @return EAction
+         */
+        fun valueOfCode(action: String): Action {
+            for (status in values()) {
+                if (status.action == action) {
+                    return status
+                }
+            }
+            throw IllegalArgumentException(
+                    "Partnership status cannot be resolved for value " + action)
+        }
+    }
 }

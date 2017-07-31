@@ -14,7 +14,7 @@ interface Parser {
     fun readHandFile(): String
     fun isHandFile(filePath: String): Boolean
     fun parseNewHandLine(line: String, phase: String, nextPhases: Array<String>, hand: Hand): String
-    fun parse(): MutableMap<String, Hand>?
+    fun parse(): MutableMap<String, Hand>
 
     fun parseTableLine(currentLine: String, iterator: Iterator<String>, phase: String, nextPhases: Array<String>, hand: Hand): String
 
@@ -25,7 +25,7 @@ interface Parser {
     fun parseDealer(currentLine: String, iterator: Iterator<String>, phase: String, nextPhases: Array<String>, hand: Hand): String
 
     fun readActionsByPhase(currentLine: String, iterator: Iterator<String>, hand: Hand, phase: String, nextPhases: Array<String>,
-                           actions: MutableList<HandAction>): String
+                           actions: MutableList<HandAction>?): String
 
     fun readPreflop(currentLine: String, iterator: Iterator<String>, hand: Hand): String
 
@@ -41,15 +41,15 @@ interface Parser {
 
     fun getCards(cards: String): Array<String>
 
-    fun toCards(cards: Array<String>): Array<Card>
+    fun toCards(cards: Array<String>?): Array<Card?>?
 
     fun getPlayerBlind(blindDealt: Array<String>): String
 
-    fun readCards(line: String): Array<Card>
+    fun readCards(line: String): Array<Card?>?
 
     fun readAction(line: String, players: Map<String, Player>): HandAction
 
-    fun stringToECards(card: String): Card
+    fun stringToCards(card: String): Card
 
     fun nextLine(scanner: Scanner): String
 
@@ -81,9 +81,9 @@ interface Parser {
 
     fun parsePlayerSeat(line: String): Player
 
-    fun parseTotalPot(line: String): Double?
+    fun parseTotalPot(line: String): Double
 
-    fun parseRake(line: String): Double?
+    fun parseRake(line: String): Double
 
     fun parsePlayerAccount(line: String): String
 
