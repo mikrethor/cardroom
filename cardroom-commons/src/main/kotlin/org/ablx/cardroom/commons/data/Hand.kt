@@ -1,12 +1,14 @@
 package org.ablx.cardroom.commons.data
 
+import org.ablx.cardroom.commons.enumeration.Card
 import org.ablx.cardroom.commons.enumeration.Currency
 import java.util.*
 import kotlin.collections.HashMap
 
-data class Hand(val cardroomHandId: String) {
+data class Hand(var cardroomHandId: String) {
     lateinit var players: MutableMap<Int, Player>
     lateinit var playersSeatByName: MutableMap<String, Int>
+    var cardroom: Cardroom? = null
     var id: Long? = null
     var handDate: Date = Date()
     var currency: Currency = Currency.EURO
@@ -24,6 +26,7 @@ data class Hand(val cardroomHandId: String) {
     var smallBlindPlayer: Player? = null
     var bigBlindPlayer: Player? = null
     var accountPlayer: Player? = null
+    lateinit var cardroomTableId: String
 
     lateinit var preflopActions: MutableList<HandAction>
     lateinit var flopActions: MutableList<HandAction>
@@ -31,6 +34,10 @@ data class Hand(val cardroomHandId: String) {
     lateinit var riverActions: MutableList<HandAction>
     lateinit var showdownActions: MutableList<HandAction>
     lateinit var actions: MutableList<HandAction>
+
+    var flop: Array<Card?>? = null
+    var turn: Card? = null
+    var river: Card? = null
 
 
     var playersByName = HashMap<String, Player>()

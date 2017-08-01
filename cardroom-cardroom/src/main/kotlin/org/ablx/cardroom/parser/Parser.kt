@@ -3,7 +3,6 @@ package org.ablx.cardroom.parser
 import org.ablx.cardroom.commons.data.Hand
 import org.ablx.cardroom.commons.data.HandAction
 import org.ablx.cardroom.commons.data.Player
-import org.ablx.cardroom.commons.enumeration.Action
 import org.ablx.cardroom.commons.enumeration.Card
 import org.ablx.cardroom.commons.enumeration.Currency
 import org.ablx.cardroom.commons.enumeration.GameType
@@ -47,7 +46,7 @@ interface Parser {
 
     fun readCards(line: String): Array<Card?>?
 
-    fun readAction(line: String, players: Map<String, Player>): HandAction
+    fun readAction(line: String, players: Map<String, Player>): HandAction?
 
     fun stringToCards(card: String): Card
 
@@ -77,7 +76,7 @@ interface Parser {
 
     fun parseGameIdCardroom(line: String): String
 
-    fun parseButtonSeat(line: String): Int?
+    fun parseButtonSeat(line: String): Int
 
     fun parsePlayerSeat(line: String): Player
 
@@ -97,6 +96,6 @@ interface Parser {
 
     fun fileToMap(): Map<String, StringBuffer>
 
-    fun textToHandDto(text: StringBuffer): Hand
+    fun textToHand(text: StringBuffer): Hand
 
 }

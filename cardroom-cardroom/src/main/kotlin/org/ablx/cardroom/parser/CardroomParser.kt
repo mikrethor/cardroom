@@ -4,7 +4,6 @@ import org.ablx.cardroom.commons.data.Cardroom
 import org.ablx.cardroom.commons.enumeration.Card
 import org.ablx.cardroom.commons.enumeration.Currency
 import org.ablx.cardroom.commons.enumeration.Operator
-import com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER
 
 
 abstract class CardroomParser() : Parser {
@@ -14,9 +13,9 @@ abstract class CardroomParser() : Parser {
     protected abstract val filePath: String
     protected var money = Currency.USD
     val SPACE = " "
-    val DEUXPOINTS = ":"
-    val PARENTHESEGAUCHE = "("
-    val PARENTHESEDROITE = ")"
+    val COLON = ":"
+    val LEFT_PARENTHESIS = "("
+    val RIGHT_PARENTHESIS = ")"
     val OPENNING_SQUARE_BRACKET = "["
     val CLOSING_SQUARE_BRACKET = "]"
     val SLASH = "/"
