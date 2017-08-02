@@ -61,11 +61,9 @@ abstract class CardroomParser() : Parser {
         if (cards == null) {
             return null
         } else {
-            var index = 0
             val tab = arrayOfNulls<Card>(cards.size)
-            for (card in cards) {
+            for ((index, card) in cards.withIndex()) {
                 tab[index] = stringToCards(card)
-                index++
             }
             return tab
         }
@@ -73,7 +71,7 @@ abstract class CardroomParser() : Parser {
 
     override fun getPlayerBlind(blindDealt: Array<String>): String {
 
-        var playerName: String
+        val playerName: String
 
 
         if (blindDealt.size == 5) {

@@ -3,12 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <url>..</url>
     <parent>
-          <groupId>org.ablx.cardroom</groupId>
-          <artifactId>cardroom</artifactId>
-          <version>0.0.1-SNAPSHOT</version>
-      </parent>
-      
-    <groupId>org.ablx.cardroom</groupId>
+        <groupId>org.ablx.cardroom</groupId>
+        <artifactId>cardroom</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
     <artifactId>cardroom-commons</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
@@ -29,12 +28,16 @@
                 <executions>
                     <execution>
                         <id>compile</id>
-                        <goals> <goal>compile</goal> </goals>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
                     </execution>
 
                     <execution>
                         <id>test-compile</id>
-                        <goals> <goal>test-compile</goal> </goals>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
