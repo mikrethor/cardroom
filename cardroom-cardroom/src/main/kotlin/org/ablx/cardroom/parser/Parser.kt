@@ -50,13 +50,9 @@ interface Parser {
 
     fun stringToCards(card: String): Card
 
-    fun nextLine(scanner: Scanner): String
-
     fun getTournamentId(): String
 
     fun setCurrency(currency: Currency)
-
-    fun parsing(): Map<String, Hand>
 
     fun parseBuyIn(line: String): Double
 
@@ -74,7 +70,7 @@ interface Parser {
 
     fun parseNumberOfPlayerByTable(line: String): Int
 
-    fun parseGameIdCardroom(line: String): String
+    fun parseGameIdCardroom(fileName: String): String
 
     fun parseButtonSeat(line: String): Int
 
@@ -94,8 +90,8 @@ interface Parser {
 
     fun isUselesLine(line: String): Boolean?
 
-    fun fileToMap(): Map<String, StringBuffer>
+    fun fileToMap(): Map<String, String>
 
-    fun textToHand(text: StringBuffer): Hand
+    fun textToHand(text: String): Hand
 
 }
