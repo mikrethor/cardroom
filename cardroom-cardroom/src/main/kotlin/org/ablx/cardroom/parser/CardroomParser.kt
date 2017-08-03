@@ -33,10 +33,10 @@ abstract class CardroomParser() : Parser {
         money = currency
     }
 
-    protected fun startsWith(chaine: String, nextPhases: Array<String>): Boolean {
+    protected fun startsWith(line: String, nextPhases: Array<String>): Boolean {
         for (phase in nextPhases) {
 
-            if (chaine.startsWith(phase)) {
+            if (line.startsWith(phase)) {
                 return true
             }
         }
@@ -44,10 +44,9 @@ abstract class CardroomParser() : Parser {
     }
 
     override fun readCards(line: String): Array<Card?>? {
-
-        val crochetouvrant = line.lastIndexOf(OPENNING_SQUARE_BRACKET)
-        val crochetfermant = line.lastIndexOf(CLOSING_SQUARE_BRACKET)
-        val cards = line.substring(crochetouvrant + 1, crochetfermant)
+        val openningSquareBracket = line.lastIndexOf(OPENNING_SQUARE_BRACKET)
+        val closingSquareBracket = line.lastIndexOf(CLOSING_SQUARE_BRACKET)
+        val cards = line.substring(openningSquareBracket + 1, closingSquareBracket)
         val tab = this.toCards(this.getCards(cards))
         return tab
     }
@@ -70,9 +69,7 @@ abstract class CardroomParser() : Parser {
     }
 
     override fun getPlayerBlind(blindDealt: Array<String>): String {
-
         val playerName: String
-
 
         if (blindDealt.size == 5) {
             playerName = blindDealt[0]
@@ -84,13 +81,9 @@ abstract class CardroomParser() : Parser {
             playerName = blindDealt[0] + SPACE + getPlayerBlind(newTab)
         }
         return playerName
-
     }
 
     override fun getCards(cards: String): Array<String> {
-
-
         return cards.split(SPACE.toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-
     }
 }

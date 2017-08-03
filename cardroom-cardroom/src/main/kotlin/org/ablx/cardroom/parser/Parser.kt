@@ -50,8 +50,6 @@ interface Parser {
 
     fun stringToCards(card: String): Card
 
-    fun getTournamentId(): String
-
     fun setCurrency(currency: Currency)
 
     fun parseBuyIn(line: String): Double
