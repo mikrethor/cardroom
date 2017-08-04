@@ -28,6 +28,7 @@ data class Hand(var cardroomHandId: String) {
     var accountPlayer: Player? = null
     lateinit var cardroomTableId: String
 
+    lateinit var date:Date
     lateinit var preflopActions: MutableList<HandAction>
     lateinit var flopActions: MutableList<HandAction>
     lateinit var turnActions: MutableList<HandAction>
