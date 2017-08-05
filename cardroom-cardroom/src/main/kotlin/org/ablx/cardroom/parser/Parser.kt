@@ -86,7 +86,9 @@ interface Parser {
 
     fun parseCurrency(line: String): Currency
 
-    fun isUselesLine(line: String): Boolean?
+    fun isUselessLine(line: String): Boolean
+
+    fun getNextUseFulLine(iterator: Iterator<String>): String
 
     fun fileToMap(): Map<String, String>
 
