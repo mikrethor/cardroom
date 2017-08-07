@@ -94,4 +94,5 @@ interface Parser {
 
     fun textToHand(text: String): Hand
 
+    fun convertHandDate(text: String): Date
 }

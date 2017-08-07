@@ -4,13 +4,16 @@ import org.ablx.cardroom.commons.data.Cardroom
 import org.ablx.cardroom.commons.enumeration.Card
 import org.ablx.cardroom.commons.enumeration.Currency
 import org.ablx.cardroom.commons.enumeration.Operator
+import java.text.SimpleDateFormat
+import java.util.*
 
 
-abstract class CardroomParser() : Parser {
+abstract class CardroomParser : Parser {
 
     protected abstract val operator: Operator
     protected abstract val cardroom: Cardroom
     protected abstract val filePath: String
+    protected abstract val handDateFormat: String
     protected var money = Currency.USD
     val SPACE = " "
     val COLON = ":"
@@ -85,5 +88,10 @@ abstract class CardroomParser() : Parser {
 
     override fun getCards(cards: String): Array<String> {
         return cards.split(SPACE.toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+    }
+
+    override fun convertHandDate(text: String): Date {
+        val sdf = SimpleDateFormat(handDateFormat)
+        return sdf.parse(text)
     }
 }
