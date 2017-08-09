@@ -6,7 +6,6 @@ import java.nio.file.Paths
 import java.io.File
 
 
-
 class ParserTest {
     @Test
     fun testParsing() {
@@ -16,10 +15,7 @@ class ParserTest {
         val file = File(classLoader.getResource("20131217_Tokyo02_real_holdem_no-limit.txt")!!.file)
 
         val encoded: ByteArray = Files.readAllBytes(Paths.get(file.absolutePath))
-        val contenu: String = String(encoded, Charsets.UTF_8)
-        contenu.reader().forEachLine {println( it) }
 
-
+        String(encoded, Charsets.UTF_8).reader().forEachLine { println(it) }
     }
-
 }
