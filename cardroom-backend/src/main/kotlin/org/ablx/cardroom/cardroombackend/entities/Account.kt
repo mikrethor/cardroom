@@ -1,9 +1,7 @@
 package org.ablx.cardroom.cardroombackend.entities
 
 
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.ManyToOne
+import javax.persistence.*
 
 @Entity
 class Account() {
@@ -15,7 +13,11 @@ class Account() {
 
     }
 
-    @Id var id: Long = 0
+    @Id
+    @Column(name = "id", unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "account_id_sequence")
+    @SequenceGenerator(name = "account_id_sequence", sequenceName = "account_id_seq", allocationSize = 1)
+    var id: Long = 0
 
 
     @ManyToOne
