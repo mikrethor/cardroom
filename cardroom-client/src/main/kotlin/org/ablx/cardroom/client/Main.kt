@@ -21,6 +21,14 @@ class Main : Application() {
         actiontarget?.setText("Sign in button pressed")
     }
 
+    @FXML protected fun handleKeyInput(event: ActionEvent) {
+        actiontarget?.setText("Sign in button pressed")
+    }
+
+    @FXML protected fun handleAboutAction(event: ActionEvent) {
+        actiontarget?.setText("Sign in button pressed")
+    }
+
     public val action: EventHandler<ActionEvent> = object : EventHandler<ActionEvent> {
 
         override fun handle(event: ActionEvent) {
