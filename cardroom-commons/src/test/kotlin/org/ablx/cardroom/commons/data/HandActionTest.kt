@@ -1,8 +1,9 @@
-package org.ablx.cardroom.commons.enumeration
+package org.ablx.cardroom.commons.data
 
-import org.ablx.cardroom.commons.data.Cardroom
-import org.ablx.cardroom.commons.data.HandAction
-import org.ablx.cardroom.commons.data.Player
+import org.ablx.cardroom.commons.enumeration.Action
+import org.ablx.cardroom.commons.enumeration.Card
+import org.ablx.cardroom.commons.enumeration.Domain
+import org.ablx.cardroom.commons.enumeration.Operator
 import org.junit.Test
 import kotlin.test.assertEquals
 
