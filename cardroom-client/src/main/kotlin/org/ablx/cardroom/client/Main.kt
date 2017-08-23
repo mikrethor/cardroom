@@ -48,7 +48,11 @@ class Main : Application() {
 
         primaryStage.setTitle("Cardroom")
         primaryStage.setScene(scene)
+        primaryStage.setResizable(false)
+        primaryStage.setFullScreen(true)
+
         primaryStage.show()
+
     }
 
     companion object {
