@@ -14,6 +14,7 @@
         <module>cardroom-cardroom</module>
         <module>cardroom-commons</module>
 		<module>cardroom-backend</module>
+        <module>cardroom-client</module>
     </modules>
 
 	
