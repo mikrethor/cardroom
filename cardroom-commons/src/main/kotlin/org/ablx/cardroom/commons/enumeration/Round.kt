@@ -10,5 +10,5 @@ enum class Round(val round: String) {
 
     RIVER("river"),
 
-    SHOWDOWN("showdown");
+    SHOWDOWN("showdown")
 }
