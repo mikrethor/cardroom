@@ -7,6 +7,7 @@ import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
+import javafx.scene.paint.Color
 import javafx.scene.text.Text
 import javafx.stage.Stage
 
@@ -47,16 +48,27 @@ class Main : Application() {
 //        btn.setOnAction(action)
 
         //val root = StackPane()
-      val root: Parent = FXMLLoader.load<Any>(javaClass.getResource("/cardroom.fxml")) as Parent
-    //    root.children.add(btn)
+        val root: Parent = FXMLLoader.load<Any>(javaClass.getResource("/cardroom.fxml")) as Parent
+
 
         val scene = Scene(root, 300.0, 250.0)
 
-        primaryStage.setTitle("Cardroom")
-        primaryStage.setScene(scene)
-        primaryStage.setResizable(false)
-        primaryStage.setFullScreen(true)
+        
 
+        primaryStage.maxWidth = 300.0
+        primaryStage.minWidth = 300.0
+        primaryStage.maxHeight = 250.0
+        primaryStage.minHeight = 250.0
+        primaryStage.height = 250.0
+        primaryStage.width = 300.0
+
+        primaryStage.title = "Cardroom"
+        primaryStage.scene = scene
+        primaryStage.scene.fill = Color.BLUE
+        primaryStage.isResizable = false
+        primaryStage.isFullScreen = false
+
+        scene.window.sizeToScene()
         primaryStage.show()
 
     }
@@ -64,10 +76,7 @@ class Main : Application() {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-
             Application.launch(Main::class.java, *args)
-
-
         }
     }
 }

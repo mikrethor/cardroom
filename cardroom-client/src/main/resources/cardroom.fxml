@@ -5,12 +5,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 
-<GridPane fx:controller="org.ablx.cardroom.client.Main"
-          xmlns:fx="http://javafx.com/fxml/1"
-          xmlns="http://javafx.com/javafx/8"
-          alignment="center" hgap="10" vgap="10"
-          styleClass="root" >
-    <MenuBar fx:id="menuBar" onKeyPressed="#handleKeyInput">
+
+<VBox id="vbox" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.ablx.cardroom.client.Main">
+    <MenuBar fx:id="menuBar" onKeyPressed="#handleKeyInput" GridPane.columnSpan="2">
         <menus>
             <Menu text="File">
                 <items>
@@ -18,7 +16,7 @@
                     <MenuItem text="Open"/>
                     <MenuItem text="Save"/>
                     <MenuItem text="Save As"/>
-                    <SeparatorMenuItem  />
+                    <SeparatorMenuItem/>
                     <MenuItem text="Exit"/>
                 </items>
             </Menu>
@@ -33,43 +31,55 @@
                 <items>
                     <MenuItem text="Search" disable="true"/>
                     <MenuItem text="Online Manual" visible="false"/>
-                    <SeparatorMenuItem />
+                    <SeparatorMenuItem/>
                     <MenuItem text="About" onAction="#handleAboutAction"/>
                 </items>
             </Menu>
         </menus>
     </MenuBar>
+    <VBox>
+        <GridPane
+                xmlns:fx="http://javafx.com/fxml/1"
+                xmlns="http://javafx.com/javafx/8"
+                alignment="center" hgap="30" vgap="25"
+
+                maxHeight="Infinity" maxWidth="Infinity"
+                prefHeight="Infinity" prefWidth="Infinity">
 
 
-    <padding><Insets top="25" right="25" bottom="10" left="25" /></padding>
+            <padding>
+                <Insets top="25" right="0" bottom="10" left="0"/>
 
-    <Text id="welcome-text" text="Welcome"
-          GridPane.columnIndex="0" GridPane.rowIndex="0"
-          GridPane.columnSpan="2"/>
+            </padding>
 
-    <Label text="User Name:"
-           GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="User Name:"
+                   GridPane.columnIndex="0" GridPane.rowIndex="1"/>
 
-    <TextField
-            GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField
+                    GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-    <Label text="Password:"
-           GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label text="Password:"
+                   GridPane.columnIndex="0" GridPane.rowIndex="2"/>
 
-    <PasswordField fx:id="passwordField"
-                   GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <PasswordField fx:id="passwordField"
+                           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
-    <HBox spacing="10" alignment="bottom_right"
-          GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <Button text="Sign In"
-                onAction="#handleSubmitButtonAction" />
-    </HBox>
+            <HBox spacing="1" alignment="bottom_right"
+                  GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <Button text="Sign In"
+                        onAction="#handleSubmitButtonAction"/>
+            </HBox>
 
-    <Text fx:id="actiontarget"
-          GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+            <Text fx:id="actiontarget"
+                  GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="6"
+                  GridPane.fillHeight="Infinity" GridPane.fillWidth="Infinity"/>
 
-  <!--  <stylesheets>
-        <URL value="@Login.css" />
-    </stylesheets>-->
+            <!--  <stylesheets>
+                  <URL value="@Login.css" />
+              </stylesheets>-->
 
-</GridPane>
+        </GridPane>
+
+    </VBox>
+</VBox>
+
