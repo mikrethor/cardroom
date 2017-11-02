@@ -10,7 +10,6 @@ class Player() {
         this.id = id
         this.name = this.name
         this.cardroom = cardroom
-
     }
 
     @Id
@@ -22,6 +21,4 @@ class Player() {
 
     @ManyToOne
     lateinit var cardroom: Cardroom
-
-
 }

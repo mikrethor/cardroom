@@ -22,6 +22,4 @@ class Account() {
 
     @ManyToOne
     lateinit var player: Player
-
-
 }
