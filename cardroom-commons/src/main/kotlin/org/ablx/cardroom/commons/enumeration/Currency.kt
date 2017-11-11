@@ -5,6 +5,4 @@ enum class Currency(val symbol: String, val shortName: String) {
     USD("\u0024", "USD"),
     POUND("\u00A3", "GBP"),
     PLAY_MONEY("", "PLAY_MONEY")
-
-
 }

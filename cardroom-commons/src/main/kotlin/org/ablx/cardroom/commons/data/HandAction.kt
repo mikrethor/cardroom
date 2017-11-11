@@ -7,7 +7,7 @@ import org.ablx.cardroom.commons.enumeration.Round
 data class HandAction(var player: Player?, val action: Action, val amount: Double,
                       val cards: Array<Card?>?) {
 
-     var round: Round?=null
+     lateinit var round: Round
 
 
 }

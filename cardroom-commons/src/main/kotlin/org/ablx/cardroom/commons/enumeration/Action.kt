@@ -21,12 +21,7 @@ enum class Action(val action: String, val value: Int) {
          * @return EAction
          */
         fun valueOfCode(action: String): Action {
-            values()
-                    .asSequence()
-                    .filter { it.action == action }
-                    .forEach { return it }
-            throw IllegalArgumentException(
-                    "Partnership status cannot be resolved for value " + action)
+            return valueOf(action.toUpperCase())
         }
     }
 }

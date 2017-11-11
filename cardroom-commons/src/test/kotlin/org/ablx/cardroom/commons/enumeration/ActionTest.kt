@@ -29,7 +29,21 @@ class ActionTest {
 
         assertEquals(Action.SHOWS.action, "shows")
         assertEquals(Action.SHOWS.value, 7)
+    }
 
-
+    @Test
+    fun testValueOf() {
+        assertEquals(Action.FOLDS,Action.valueOfCode("folds"))
+        assertEquals(Action.CALLS,Action.valueOfCode( "calls"))
+        assertEquals(Action.RAISES, Action.valueOfCode("raises"))
+        assertEquals(Action.CHECKS, Action.valueOfCode("checks"))
+        assertEquals(Action.BETS, Action.valueOfCode("bets"))
+        assertEquals(Action.COLLECTED, Action.valueOfCode("collected"))
+        assertEquals(Action.SHOWS, Action.valueOfCode("shows"))
+        try{
+             Action.valueOfCode("error")
+        }catch (e:IllegalArgumentException){
+            assertEquals("No enum constant org.ablx.cardroom.commons.enumeration.Action.ERROR",e.message)
+        }
     }
 }
