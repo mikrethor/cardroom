@@ -16,10 +16,6 @@
     <name>Cardroom Backend</name>
     <description>Demo project for Spring Boot</description>
 
-
-
-
-
     <dependencyManagement>
         <dependencies>
             <dependency>
