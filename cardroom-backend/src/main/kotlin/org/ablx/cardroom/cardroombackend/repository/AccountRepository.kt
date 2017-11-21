@@ -7,4 +7,4 @@ import org.springframework.stereotype.Repository
 
 
 @Repository
-interface AccountRepository : JpaRepository<Account, Long>
+internal interface AccountRepository : JpaRepository<Account, Long>

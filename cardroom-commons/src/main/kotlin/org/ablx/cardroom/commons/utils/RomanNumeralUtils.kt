@@ -65,14 +65,13 @@ class RomanNumeralUtils {
             return decimal
         }
 
-        fun processDecimal(decimal: Int, lastNumber: Int,
-                           lastDecimal: Int): Int {
-            if (lastNumber > decimal) {
-                return lastDecimal - decimal
-            } else {
-                return lastDecimal + decimal
-            }
+        private fun processDecimal(decimal: Int, lastNumber: Int,
+                                   lastDecimal: Int): Int
+                = when (lastNumber > decimal) {
+            true ->  lastDecimal - decimal
+            false ->  lastDecimal + decimal
         }
+
 
     }
 }

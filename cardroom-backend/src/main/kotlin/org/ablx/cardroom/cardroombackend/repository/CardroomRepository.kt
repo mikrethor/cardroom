@@ -6,4 +6,4 @@ import org.springframework.stereotype.Repository
 
 
 @Repository
-interface CardroomRepository : JpaRepository<Cardroom, Long>
+internal interface CardroomRepository : JpaRepository<Cardroom, Long>

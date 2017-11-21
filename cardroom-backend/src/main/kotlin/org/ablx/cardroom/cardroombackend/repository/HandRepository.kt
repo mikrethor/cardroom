@@ -7,4 +7,4 @@ import org.springframework.stereotype.Repository
 
 
 @Repository
-interface HandRepository : JpaRepository<Hand, Long>
+internal interface HandRepository : JpaRepository<Hand, Long>

@@ -6,4 +6,4 @@ import org.springframework.stereotype.Repository
 
 
 @Repository
-interface PlayerRepository : JpaRepository<Player, Long>
+internal interface PlayerRepository : JpaRepository<Player, Long>

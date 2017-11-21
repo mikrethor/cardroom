@@ -1,6 +1,5 @@
 package org.ablx.cardroom.cardroombackend
 
-import org.ablx.cardroom.cardroombackend.entities.Account
 import org.ablx.cardroom.cardroombackend.entities.Hand
 import org.ablx.cardroom.cardroombackend.repository.HandRepository
 import org.junit.Test
@@ -12,7 +11,7 @@ import kotlin.test.assertEquals
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
-class HandEntitiesTests {
+internal class HandEntitiesTests {
 
     @Autowired
     lateinit var handRepository: HandRepository;

@@ -11,7 +11,7 @@ import kotlin.test.assertEquals
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
-class AccountEntitiesTests {
+internal class AccountEntitiesTests {
 
     @Autowired
     lateinit var accountRepository: AccountRepository;
