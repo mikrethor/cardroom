@@ -50,8 +50,7 @@ abstract class CardroomParser : Parser {
         val openningSquareBracket = line.lastIndexOf(OPENNING_SQUARE_BRACKET)
         val closingSquareBracket = line.lastIndexOf(CLOSING_SQUARE_BRACKET)
         val cards = line.substring(openningSquareBracket + 1, closingSquareBracket)
-        val tab = this.toCards(this.getCards(cards))
-        return tab
+        return this.toCards(this.getCards(cards))
     }
 
     override fun stringToCards(card: String): Card = Card.valueOfCode(card.toUpperCase())
@@ -76,7 +75,7 @@ abstract class CardroomParser : Parser {
             playerName = blindDealt[0]
         } else {
             val newTab = Array(blindDealt.size - 1, { _ -> "" })
-            for (i in 1..blindDealt.size - 1 - 1) {
+            for (i in 1 until blindDealt.size - 1 - 1) {
                 newTab[i - 1] = blindDealt[i]
             }
             playerName = blindDealt[0] + SPACE + getPlayerBlind(newTab)
