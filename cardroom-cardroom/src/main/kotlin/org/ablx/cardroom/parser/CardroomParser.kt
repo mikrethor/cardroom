@@ -54,9 +54,7 @@ abstract class CardroomParser : Parser {
         return tab
     }
 
-    override fun stringToCards(card: String): Card {
-        return Card.valueOf("C_" + card.toUpperCase())
-    }
+    override fun stringToCards(card: String): Card = Card.valueOfCode(card.toUpperCase())
 
     override fun toCards(cards: Array<String>?): Array<Card?>? {
 
@@ -86,12 +84,8 @@ abstract class CardroomParser : Parser {
         return playerName
     }
 
-    override fun getCards(cards: String): Array<String> {
-        return cards.split(SPACE.toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-    }
+    override fun getCards(cards: String): Array<String> = cards.split(SPACE.toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 
-    override fun convertHandDate(text: String): Date {
-        val sdf = SimpleDateFormat(handDateFormat)
-        return sdf.parse(text)
-    }
+    override fun convertHandDate(text: String): Date = SimpleDateFormat(handDateFormat).parse(text)
+
 }

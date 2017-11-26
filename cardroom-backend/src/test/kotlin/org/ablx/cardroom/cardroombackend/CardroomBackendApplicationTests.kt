@@ -9,10 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner
 @SpringBootTest
 class CardroomBackendApplicationTests {
 
-
     @Test
     fun contextLoads() {
     }
-
-
 }

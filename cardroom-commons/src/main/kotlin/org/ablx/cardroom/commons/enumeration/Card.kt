@@ -216,4 +216,10 @@ enum class Card(val value: Int) {
      * Two of Clubs.
      */
     C_2C(2);
+
+    companion object {
+        fun valueOfCode(card: String): Card =
+                Card.valueOf("C_" + card.toUpperCase())
+
+    }
 }
