@@ -40,7 +40,6 @@ data class Hand(var cardroomHandId: String) {
     var turn: Card? = null
     var river: Card? = null
 
-
     var playersByName = HashMap<String, Player>()
     override fun toString(): String {
         return "Hand(cardroomHandId='$cardroomHandId', players=$players, id=$id, handDate=$handDate, currency=$currency, bigBlind=$bigBlind, smallBlind=$smallBlind, level=$level, fee=$fee, buyIn=$buyIn, playersByName=$playersByName)"
@@ -52,6 +51,4 @@ data class Hand(var cardroomHandId: String) {
         playersSeatByName.put(player.name, player.seat)
 
     }
-
-
 }
